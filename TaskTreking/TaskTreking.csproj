@@ -48,6 +48,8 @@
     <Compile Include="ITask.cs" />
     <Compile Include="Feture.cs" />
     <Compile Include="TechnicalDebt.cs" />
+    <Compile Include="Project.cs" />
+    <Compile Include="TaskManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

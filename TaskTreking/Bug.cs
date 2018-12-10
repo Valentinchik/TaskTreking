@@ -13,7 +13,7 @@ namespace TaskTreking
         {
         }
 
-        public void SetStatus(string status)
+        public void SetStatus(Status status)
         {
             
         }

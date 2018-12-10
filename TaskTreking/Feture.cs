@@ -6,34 +6,28 @@ using System.Threading.Tasks;
 
 namespace TaskTreking
 {
-    class Feture //: ITask
+    class Feture : ITask
     {
         private int number;
-        public int Number
+        public int Number { get; set; }
+        
+        public string Description { get; set; }
+
+        public int Priority { get; set; }
+
+        public int Duration { get; set; }
+        public int Complexity { get; set; }
+
+        public Status Status;
+
+        public int GetDuration()
         {
-            get
-            {
-                return number;
-            }
-            set
-            {
-                number = value;
-            }
+            return Complexity * Priority;
         }
 
-        private string description;
-        public string Description
+        public void SetStatus(Status status)
         {
-            get
-            {
-                return description;
-            }
-            set
-            {
-                description = value;
-            }
+            Status = status;
         }
-        
-        public int Coplexity { get; set; }
     }
 }
