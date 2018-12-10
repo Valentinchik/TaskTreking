@@ -8,15 +8,7 @@ namespace TaskTreking
         public int Duration { get; set; }
         public int Number { get; set; }
         public string Description { get; set; }
-
-        public Bug()
-        {
-        }
-
-        public void SetStatus(Status status)
-        {
-            
-        }
+        public Status status { get; set; }
 
         public int GetDuration()
         {

@@ -10,7 +10,7 @@ namespace TaskTreking
     {
         int Number { get; set; }
         string Description { get; set; }
-        void SetStatus(Status status);
+        Status status { get; set; }
         int Complexity { get; set; }
         int Priority { get; set; }
         int GetDuration();
