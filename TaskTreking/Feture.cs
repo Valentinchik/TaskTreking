@@ -73,12 +73,7 @@ namespace TaskTreking
             }
         }
 
-        public Status Status;
-
-        public void SetStatus(Status status)
-        {
-            Status = status;
-        }
+        public Status status { get; set; }
 
         public int GetDuration()
         {

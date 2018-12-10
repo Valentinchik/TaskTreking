@@ -9,10 +9,10 @@ namespace TaskTreking
     class Project
     {
         public string Name { get; set; }
-        public List<ITask> AllTasksInStart;
-        public List<ITask> ToDoTasks;
-        public List<ITask> InProgress;
-        public List<ITask> Done;
+        public List<ITask> AllTasksInStart = new List<ITask>();
+        public List<ITask> ToDoTasks = new List<ITask>();
+        public List<ITask> InProgress = new List<ITask>();
+        public List<ITask> Done = new List<ITask>();
 
         public Project(string name){
             Name = name;

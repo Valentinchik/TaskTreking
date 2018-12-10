@@ -59,13 +59,14 @@ namespace TaskTreking
             return tempTask;
         }
 
-        void IterationGeneration()
+        public void IterationGeneration()
         {
             int time = 0;
             int maxTime = CountTeam * LengthIteration;
             while (time < maxTime)
             {
                 ITask tempTask = FindMaxPriority(Project.AllTasksInStart);
+                time += tempTask.Duration;
                 Project.ToDoTasks.Add(tempTask);
                 Project.AllTasksInStart.Remove(tempTask);
             }
@@ -74,13 +75,13 @@ namespace TaskTreking
         void TaskProcess(Project project)
         {
             day++;
-            for(int i= project.ToDoTasks.Count - 1; i>= 0; i--)
+            for(int i= project.InProgress.Count - 1; i>= 0; i--)
             {
-                project.ToDoTasks[i].Duration--;
-                if(project.ToDoTasks[i].Duration == 0)
+                project.InProgress[i].Duration--;
+                if(project.InProgress[i].Duration == 0)
                 {
-                    project.Done.Add(project.ToDoTasks[i]);
-                    project.ToDoTasks.Remove(project.ToDoTasks[i]);
+                    project.Done.Add(project.Done[i]);
+                    project.InProgress.Remove(project.InProgress[i]);
                 }
             }
         }

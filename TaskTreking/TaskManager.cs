@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace TaskTreking
 {
-    public class TaskManager
+    class TaskManager
     {
         Random random = new Random();
 
-        private List<ITask> GenerateAllTasks(){
+        public List<ITask> GenerateAllTasks(){
             int count = random.Next(5, 30);
             ITask task;
             List<ITask> tasks = new List<ITask>();
@@ -18,8 +18,9 @@ namespace TaskTreking
                 task.Number = i;
                 task.Description = "- " + 1;
                 task.status = Status.Planned;
-                task.Complexity = (random.Next(0, 50) / 10);
-                task.Priority = (random.Next(0, 50) / 10);
+                task.Complexity = (random.Next(10, 50) / 10);
+                task.Priority = (random.Next(10, 50) / 10);
+                task.Duration = task.GetDuration();
                 tasks.Add(task);
             }
 

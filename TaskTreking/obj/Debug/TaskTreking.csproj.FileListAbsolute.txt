@@ -4,3 +4,10 @@
 /Users/admin/TaskTracking/TaskTreking/TaskTreking/obj/Debug/TaskTreking.csproj.CoreCompileInputs.cache
 /Users/admin/TaskTracking/TaskTreking/TaskTreking/obj/Debug/TaskTreking.exe
 /Users/admin/TaskTracking/TaskTreking/TaskTreking/obj/Debug/TaskTreking.pdb
+E:\Projects\TaskTreking\TaskTreking\bin\Debug\TaskTreking.exe.config
+E:\Projects\TaskTreking\TaskTreking\bin\Debug\TaskTreking.exe
+E:\Projects\TaskTreking\TaskTreking\bin\Debug\TaskTreking.pdb
+E:\Projects\TaskTreking\TaskTreking\obj\Debug\TaskTreking.csprojAssemblyReference.cache
+E:\Projects\TaskTreking\TaskTreking\obj\Debug\TaskTreking.csproj.CoreCompileInputs.cache
+E:\Projects\TaskTreking\TaskTreking\obj\Debug\TaskTreking.exe
+E:\Projects\TaskTreking\TaskTreking\obj\Debug\TaskTreking.pdb
