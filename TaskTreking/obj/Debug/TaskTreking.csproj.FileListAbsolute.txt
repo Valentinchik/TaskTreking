@@ -1,0 +1,1 @@
+/Users/admin/TaskTracking/TaskTreking/TaskTreking/obj/Debug/TaskTreking.csproj.CoreCompileInputs.cache
