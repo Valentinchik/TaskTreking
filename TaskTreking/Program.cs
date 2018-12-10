@@ -8,6 +8,7 @@ namespace TaskTreking
 {
     public enum Status
     {
+        Planned,
         ToDo,
         InProgress,
         Done
@@ -17,7 +18,8 @@ namespace TaskTreking
     {
         static void Main(string[] args)
         {
-            Project project = new Project();
+            string nameOfProject = Console.ReadLine();
+            Project project = new Project(nameOfProject);
         }
     }
 }

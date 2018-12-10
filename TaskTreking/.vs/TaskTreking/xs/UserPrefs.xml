@@ -1,14 +1,14 @@
 ﻿<Properties StartupConfiguration="{9AB965CC-193F-4379-A30C-74B6FACAEE91}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="TechnicalDebt.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="TaskManager.cs">
     <Files>
-      <File FileName="Program.cs" Line="19" Column="10" />
+      <File FileName="Program.cs" Line="22" Column="58" />
       <File FileName="TaskTreking Status" />
-      <File FileName="ITask.cs" Line="13" Column="30" />
-      <File FileName="Feture.cs" Line="28" Column="37" />
-      <File FileName="Bug.cs" Line="5" Column="6" />
-      <File FileName="Project.cs" Line="18" Column="25" />
-      <File FileName="TaskManager.cs" Line="6" Column="9" />
-      <File FileName="TechnicalDebt.cs" Line="20" Column="37" />
+      <File FileName="ITask.cs" Line="13" Column="17" />
+      <File FileName="Feture.cs" Line="22" Column="43" />
+      <File FileName="Bug.cs" Line="11" Column="43" />
+      <File FileName="Project.cs" Line="12" Column="38" />
+      <File FileName="TaskManager.cs" Line="20" Column="28" />
+      <File FileName="TechnicalDebt.cs" Line="16" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.TaskTreking PreferredExecutionTarget="MonoDevelop.Default" />

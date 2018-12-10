@@ -1,1 +1,6 @@
+/Users/admin/TaskTracking/TaskTreking/TaskTreking/bin/Debug/TaskTreking.exe.config
+/Users/admin/TaskTracking/TaskTreking/TaskTreking/bin/Debug/TaskTreking.exe
+/Users/admin/TaskTracking/TaskTreking/TaskTreking/bin/Debug/TaskTreking.pdb
 /Users/admin/TaskTracking/TaskTreking/TaskTreking/obj/Debug/TaskTreking.csproj.CoreCompileInputs.cache
+/Users/admin/TaskTracking/TaskTreking/TaskTreking/obj/Debug/TaskTreking.exe
+/Users/admin/TaskTracking/TaskTreking/TaskTreking/obj/Debug/TaskTreking.pdb

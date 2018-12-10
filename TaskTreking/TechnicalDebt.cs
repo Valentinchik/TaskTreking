@@ -8,18 +8,11 @@ namespace TaskTreking
         public int Complexity { get; set; }
         public int Priority { get; set; }
         public int Duration { get; set; }
+        public Status status { get; set; }
 
-        public TechnicalDebt()
-        {
-        }
         public int GetDuration()
         {
             return Complexity * Priority;
-        }
-
-        public void SetStatus(Status status)
-        {
-            
         }
     }
 }

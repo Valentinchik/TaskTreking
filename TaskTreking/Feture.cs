@@ -16,18 +16,14 @@ namespace TaskTreking
         public int Priority { get; set; }
 
         public int Duration { get; set; }
+
         public int Complexity { get; set; }
 
-        public Status Status;
+        public Status status { get; set; }
 
         public int GetDuration()
         {
             return Complexity * Priority;
-        }
-
-        public void SetStatus(Status status)
-        {
-            Status = status;
         }
     }
 }
