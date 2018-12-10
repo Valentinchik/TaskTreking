@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TaskTreking
 {
-    class Feture //: ITask
+    class Feture : ITask
     {
         private int number;
         public int Number
@@ -22,17 +22,7 @@ namespace TaskTreking
         }
 
         private string description;
-        public string Description
-        {
-            get
-            {
-                return description;
-            }
-            set
-            {
-                description = value;
-            }
-        }
+        public string Description { get; set; }
         
         public int Coplexity { get; set; }
     }
