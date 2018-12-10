@@ -21,9 +21,9 @@ namespace TaskTreking
 
         public Status Status;
 
-        public void SetStatus(Status status)
+        public void SetStatus(string status)
         {
-            Status = status;
+            Status = Status.Done;
         }
 
         public int GetDuration()

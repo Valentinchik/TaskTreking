@@ -8,6 +8,7 @@ namespace TaskTreking
 {
     public enum Status
     {
+        Planned,
         ToDo,
         InProgress,
         Done
