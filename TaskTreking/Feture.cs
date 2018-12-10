@@ -9,26 +9,80 @@ namespace TaskTreking
     class Feture : ITask
     {
         private int number;
-        public int Number { get; set; }
-        
-        public string Description { get; set; }
-        
-        public int Coplexity { get; set; }
+        public int Number
+        {
+            get
+            {
+                return number;
+            }
+            set
+            {
+                number = value;
+            }
+        }
 
-        public int Priority { get; set; }
+        private string description;
+        public string Description
+        {
+            get
+            {
+                return description;
+            }
+            set
+            {
+                description = value;
+            }
+        }
 
-        public int Duration { get; set; }
+        private int coplexity;
+        public int Complexity
+        {
+            get
+            {
+                return coplexity;
+            }
+            set
+            {
+                coplexity = value;
+            }
+        }
+
+        private int priority;
+        public int Priority
+        {
+            get
+            {
+                return priority;
+            }
+            set
+            {
+                priority = value;
+            }
+        }
+
+        private int duration;
+        public int Duration
+        {
+            get
+            {
+                return duration;
+            }
+            set
+            {
+                duration = value;
+            }
+        }
 
         public Status Status;
 
-        public void SetStatus(string status)
+        public void SetStatus(Status status)
         {
-            Status = Status.Done;
+            Status = status;
         }
 
         public int GetDuration()
         {
-            return Coplexity * Priority;
+            return coplexity * priority;
         }
     }
 }
