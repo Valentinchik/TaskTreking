@@ -12,22 +12,23 @@ namespace TaskTreking
         public int Number { get; set; }
         
         public string Description { get; set; }
+        
+        public int Coplexity { get; set; }
 
         public int Priority { get; set; }
 
         public int Duration { get; set; }
-        public int Complexity { get; set; }
 
         public Status Status;
 
-        public int GetDuration()
+        public void SetStatus(string status)
         {
-            return Complexity * Priority;
+            Status = Status.Done;
         }
 
-        public void SetStatus(Status status)
+        public int GetDuration()
         {
-            Status = status;
+            return Coplexity * Priority;
         }
     }
 }
