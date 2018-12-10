@@ -6,10 +6,18 @@ using System.Threading.Tasks;
 
 namespace TaskTreking
 {
+    public enum Status
+    {
+        ToDo,
+        InProgress,
+        Done
+    }
+
     class Program
     {
         static void Main(string[] args)
         {
+            Project project = new Project();
         }
     }
 }
