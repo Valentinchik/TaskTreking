@@ -19,6 +19,8 @@ namespace TaskTreking
         static void Main(string[] args)
         {
             WorkProcess();
+            Console.ReadLine();
+
         }
 
         static void Continue()

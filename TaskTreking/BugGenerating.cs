@@ -18,43 +18,38 @@ namespace TaskTreking
 
         public void GeneratBug()
         {
-            int taskIndex = random.Next(0, currentProject.Done.Count - 1);
             int iteration = random.Next(0, 1000);
-            Bug bug = new Bug();
-            ITask task;
 
-            if(iteration < 500)
+            if(iteration < 300)
             {
-                if (currentProject.Done[taskIndex].GetType() == typeof(Bug))
-                {
-                    GeneratBug();
-                }
-                else
-                {
-                    task = currentProject.Done[taskIndex];
-                    bug.Number = currentProject.AllTasksInStart.Count;
-                    bug.Description = "Bug for " + task.Description;
-                    bug.status = Status.ToDo;
-                    bug.Complexity = random.Next(10, 50) / 10;
-                    bug.Priority = 3;
-                    bug.RefTask = task;
-                    task.RefTask = bug;
-                    currentProject.ToDoTasks.Add(bug);
-                    currentProject.Bugs++;
-                }
+                List<ITask> tasks = GetListOfTasks();
+                int taskIndex = random.Next(0, tasks.Count - 1);
+                ITask task = tasks[taskIndex];
+                Bug bug = new Bug();
+                bug.Number = currentProject.AllTasksInStart.Count;
+                bug.Description = "Bug for " + task.Description;
+                bug.status = Status.ToDo;
+                bug.Complexity = random.Next(10, 50) / 10;
+                bug.Priority = 3;
+                bug.Duration = bug.Complexity * bug.Priority;
+                bug.RefTask = task;
+                task.RefTask = bug;
+                task.status = Status.InProgress;
+                currentProject.ToDoTasks.Add(bug);
+                currentProject.Bugs++;
             }
         }
 
-        private List<Feture> GetListOfFeature()
+        private List<ITask> GetListOfTasks()
         {
-            List<Feture> fetures = new List<Feture>();
-            for (int i = 0; i < currentProject.Done.Count - 1; i++)
+            List<ITask> tasks = new List<ITask>();
+            foreach (ITask t in currentProject.Done)
             {
-                if (currentProject.Done[i].GetType() == typeof(Feture))
-                    fetures.Add((Feture)currentProject.Done[i]);
+                if (t.GetType() != typeof(Bug))
+                    tasks.Add(t);
             }
 
-            return fetures;
+            return tasks;
         }
     }
 }
