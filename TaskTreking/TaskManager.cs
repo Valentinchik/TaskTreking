@@ -30,11 +30,8 @@ namespace TaskTreking
         private ITask GetTypeOfTask(){
             ITask task;
             int typeOfTask = random.Next(0, 100);
-            if(typeOfTask <= 45){
+            if(typeOfTask <= 85){
                 task = new Feture();
-            }
-            else if(typeOfTask > 45 && typeOfTask <= 90){
-                task = new Bug();
             }
             else{
                 task = new TechnicalDebt();

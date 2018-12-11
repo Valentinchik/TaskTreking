@@ -49,8 +49,11 @@ namespace TaskTreking
             while (project.AllTasksInStart.Count != 0 || project.ToDoTasks.Count != 0 || project.InProgress.Count != 0)
             {
                 process.StartDay();
+
                 if (project.Done.Count != 0)
+                {
                     bugGenerating.GeneratBug();
+                }
 
                 Continue();
             }

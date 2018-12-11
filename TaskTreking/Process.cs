@@ -33,7 +33,7 @@ namespace TaskTreking
                 CurrentProject.DayIteration = 1;
             }
 
-            while(CurrentProject.InProgress.Count < CountTeam && CurrentProject.ToDoTasks.Count > 0)
+            while(GetWorkTasks(CurrentProject.InProgress) < CountTeam && CurrentProject.ToDoTasks.Count > 0)
             {
                 ITask tempTask = FindMaxPriority(CurrentProject.ToDoTasks);
                 CurrentProject.InProgress.Add(tempTask);
@@ -43,6 +43,23 @@ namespace TaskTreking
             TaskProcess();
 
             InfoProject.WriteInfoProject(CurrentProject, day);
+        }
+
+        int GetWorkTasks(List<ITask> tasks)
+        {
+            int count = 0;
+            foreach(ITask t in tasks)
+            {
+                if(t.GetType() == typeof(Feture) && (Feture)t.RefTask == null)
+                {
+                    count++;
+                }
+                else if(t.GetType() == typeof(TechnicalDebt) && (TechnicalDebt)t.RefTask == null)
+                {
+                    count++;
+                }
+            }
+            return count;
         }
 
         ITask FindMaxPriority(List<ITask> tasks)
