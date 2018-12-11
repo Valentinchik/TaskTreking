@@ -14,9 +14,9 @@ namespace TaskTreking
         public int Priority { get; set; }
         public int Duration { get; set; }
         public Status status { get; set; }
-        public ITask RefBug;
+        public ITask RefTask { get; set; }
 
-        public int GetDuration()
+    public int GetDuration()
         {
             return Complexity * Priority;
         }

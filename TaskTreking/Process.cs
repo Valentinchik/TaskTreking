@@ -116,7 +116,7 @@ namespace TaskTreking
             if (task.GetType() == typeof(Feture))
             {
                 Feture temp = (Feture)task;
-                if (temp.RefBug != null)
+                if (temp.RefTask != null)
                 {
                     return true;
                 }
@@ -129,7 +129,7 @@ namespace TaskTreking
             if (task.GetType() == typeof(TechnicalDebt))
             {
                 TechnicalDebt temp = (TechnicalDebt)task;
-                if (temp.RefBug != null)
+                if (temp.RefTask != null)
                 {
                     return true;
                 }

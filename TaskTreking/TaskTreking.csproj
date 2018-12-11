@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BugGenerating.cs" />
     <Compile Include="InfoProject.cs" />
     <Compile Include="Process.cs" />
     <Compile Include="Program.cs" />

@@ -17,3 +17,10 @@ G:\ProjectsC#\TaskTreking\TaskTreking\obj\Debug\TaskTreking.pdb
 G:\ProjectsC#\TaskTreking\TaskTreking\bin\Debug\TaskTreking.exe
 G:\ProjectsC#\TaskTreking\TaskTreking\bin\Debug\TaskTreking.pdb
 G:\ProjectsC#\TaskTreking\TaskTreking\obj\Debug\TaskTreking.csprojResolveAssemblyReference.cache
+C:\Users\Ksenia\source\repos\TaskTracking\TaskTreking\TaskTreking\bin\Debug\TaskTreking.exe.config
+C:\Users\Ksenia\source\repos\TaskTracking\TaskTreking\TaskTreking\bin\Debug\TaskTreking.exe
+C:\Users\Ksenia\source\repos\TaskTracking\TaskTreking\TaskTreking\bin\Debug\TaskTreking.pdb
+C:\Users\Ksenia\source\repos\TaskTracking\TaskTreking\TaskTreking\obj\Debug\TaskTreking.csprojAssemblyReference.cache
+C:\Users\Ksenia\source\repos\TaskTracking\TaskTreking\TaskTreking\obj\Debug\TaskTreking.csproj.CoreCompileInputs.cache
+C:\Users\Ksenia\source\repos\TaskTracking\TaskTreking\TaskTreking\obj\Debug\TaskTreking.exe
+C:\Users\Ksenia\source\repos\TaskTracking\TaskTreking\TaskTreking\obj\Debug\TaskTreking.pdb

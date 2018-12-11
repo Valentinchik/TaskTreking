@@ -19,7 +19,7 @@ namespace TaskTreking
                 task.Description = "Task - " + i;
                 task.status = Status.Planned;
                 task.Complexity = (random.Next(10, 50) / 10);
-                task.Priority = (random.Next(10, 50) / 10);
+                task.Priority = GetPriority(task);
                 task.Duration = task.GetDuration();
                 tasks.Add(task);
             }
@@ -30,10 +30,10 @@ namespace TaskTreking
         private ITask GetTypeOfTask(){
             ITask task;
             int typeOfTask = random.Next(0, 100);
-            if(typeOfTask < 33){
+            if(typeOfTask <= 45){
                 task = new Feture();
             }
-            else if(typeOfTask > 33 && typeOfTask < 66){
+            else if(typeOfTask > 45 && typeOfTask <= 90){
                 task = new Bug();
             }
             else{
@@ -41,6 +41,26 @@ namespace TaskTreking
             }
 
             return task;
+        }
+
+        private int GetPriority(ITask task)
+        {
+            int priority = 0;
+
+            if(task.GetType() == typeof(Bug))
+            {
+                priority = 3;
+            }
+            else if(task.GetType() == typeof(Feture))
+            {
+                priority = 2;
+            }
+            else
+            {
+                priority = 1;
+            }
+
+            return priority;
         }
     }
 }

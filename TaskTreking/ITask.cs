@@ -15,5 +15,6 @@ namespace TaskTreking
         int Priority { get; set; }
         int GetDuration();
         int Duration { get; set; }
+        ITask RefTask { get; set; }
     }
 }
