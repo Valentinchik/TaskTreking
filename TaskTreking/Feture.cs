@@ -8,76 +8,17 @@ namespace TaskTreking
 {
     class Feture : ITask
     {
-        private int number;
-        public int Number
-        {
-            get
-            {
-                return number;
-            }
-            set
-            {
-                number = value;
-            }
-        }
-
-        private string description;
-        public string Description
-        {
-            get
-            {
-                return description;
-            }
-            set
-            {
-                description = value;
-            }
-        }
-
-        private int coplexity;
-        public int Complexity
-        {
-            get
-            {
-                return coplexity;
-            }
-            set
-            {
-                coplexity = value;
-            }
-        }
-
-        private int priority;
-        public int Priority
-        {
-            get
-            {
-                return priority;
-            }
-            set
-            {
-                priority = value;
-            }
-        }
-
-        private int duration;
-        public int Duration
-        {
-            get
-            {
-                return duration;
-            }
-            set
-            {
-                duration = value;
-            }
-        }
-
+        public int Number { get; set; }
+        public string Description { get; set; }
+        public int Complexity { get; set; }
+        public int Priority { get; set; }
+        public int Duration { get; set; }
         public Status status { get; set; }
+        public ITask RefBug;
 
         public int GetDuration()
         {
-            return coplexity * priority;
+            return Complexity * Priority;
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 namespace TaskTreking
 {
-    public class TechnicalDebt : ITask
+    class TechnicalDebt : ITask
     {
         public int Number { get; set; }
         public string Description { get; set; }
@@ -9,6 +9,7 @@ namespace TaskTreking
         public int Priority { get; set; }
         public int Duration { get; set; }
         public Status status { get; set; }
+        public ITask RefBug;
 
         public int GetDuration()
         {

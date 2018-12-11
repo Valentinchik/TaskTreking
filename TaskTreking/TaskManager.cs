@@ -16,7 +16,7 @@ namespace TaskTreking
             {
                 task = GetTypeOfTask();
                 task.Number = i;
-                task.Description = "- " + 1;
+                task.Description = "Task - " + i;
                 task.status = Status.Planned;
                 task.Complexity = (random.Next(10, 50) / 10);
                 task.Priority = (random.Next(10, 50) / 10);

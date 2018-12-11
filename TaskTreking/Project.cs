@@ -14,6 +14,9 @@ namespace TaskTreking
         public List<ITask> InProgress = new List<ITask>();
         public List<ITask> Done = new List<ITask>();
 
+        public int Bugs;
+        public int DayIteration = 0;
+
         public Project(string name){
             Name = name;
         }

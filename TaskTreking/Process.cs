@@ -8,42 +8,52 @@ namespace TaskTreking
 {
     class Process
     {
-        private Project Project;
+        private Project CurrentProject;
         private int day = 0;
-        private int dayIteration = 0;
         private int CountTeam = 0;
         private int LengthIteration = 0;
 
         public Process(Project project, int countTeam, int lengthIteration)
         {
-            Project = project;
+            CurrentProject = project;
             CountTeam = countTeam;
             LengthIteration = lengthIteration;
         }
 
-        public void StartIteration()
+        public void StartDay()
         {
-            dayIteration++;
-            if (dayIteration > LengthIteration)
+            CurrentProject.DayIteration++;
+            if (CurrentProject.DayIteration > LengthIteration && CurrentProject.AllTasksInStart.Count > 0)
             {
-                dayIteration = 1;
+                CurrentProject.DayIteration = 1;
                 IterationGeneration();
             }
-
-            while(Project.InProgress.Count < CountTeam)
+            else if(CurrentProject.DayIteration > LengthIteration)
             {
-                ITask tempTask = FindMaxPriority(Project.ToDoTasks);
-                Project.InProgress.Add(tempTask);
-                Project.ToDoTasks.Remove(tempTask);
+                CurrentProject.DayIteration = 1;
             }
 
-            TaskProcess(Project);
+            while(CurrentProject.InProgress.Count < CountTeam && CurrentProject.ToDoTasks.Count > 0)
+            {
+                ITask tempTask = FindMaxPriority(CurrentProject.ToDoTasks);
+                CurrentProject.InProgress.Add(tempTask);
+                CurrentProject.ToDoTasks.Remove(tempTask);
+            }
 
-            InfoProject.WriteInfoProject(Project, day);
+            TaskProcess();
+
+            InfoProject.WriteInfoProject(CurrentProject, day);
         }
 
         ITask FindMaxPriority(List<ITask> tasks)
         {
+            foreach(ITask t in tasks)
+            {
+                if(t.GetType() == typeof(Bug))
+                {
+                    return t;
+                }
+            }
             ITask tempTask = tasks[0];
             for(int i=1; i< tasks.Count; i++)
             {
@@ -63,27 +73,68 @@ namespace TaskTreking
         {
             int time = 0;
             int maxTime = CountTeam * LengthIteration;
-            while (time < maxTime)
+            while (time < maxTime && CurrentProject.AllTasksInStart.Count > 0)
             {
-                ITask tempTask = FindMaxPriority(Project.AllTasksInStart);
+                ITask tempTask = FindMaxPriority(CurrentProject.AllTasksInStart);
                 time += tempTask.Duration;
-                Project.ToDoTasks.Add(tempTask);
-                Project.AllTasksInStart.Remove(tempTask);
+                CurrentProject.ToDoTasks.Add(tempTask);
+                CurrentProject.AllTasksInStart.Remove(tempTask);
             }
         }
 
-        void TaskProcess(Project project)
+        void TaskProcess()
         {
             day++;
-            for(int i= project.InProgress.Count - 1; i>= 0; i--)
+            for(int i= CurrentProject.InProgress.Count - 1; i>= 0; i--)
             {
-                project.InProgress[i].Duration--;
-                if(project.InProgress[i].Duration == 0)
+                if(CheckBugInTask(CurrentProject.InProgress[i]) || CheckBugInTechnicalDebt(CurrentProject.InProgress[i]))
                 {
-                    project.Done.Add(project.Done[i]);
-                    project.InProgress.Remove(project.InProgress[i]);
+                    continue;
+                }
+                WorkingTask(CurrentProject.InProgress[i]);
+            }
+        }
+
+        void WorkingTask(ITask task)
+        {
+            task.Duration--;
+            if (task.Duration == 0)
+            {
+                if (task.GetType() == typeof(Bug))
+                {
+                    Bug temp = (Bug)task;
+                    CurrentProject.Done.Add(temp.RefTask);
+                    CurrentProject.InProgress.Remove(temp.RefTask);
+                }
+                CurrentProject.Done.Add(task);
+                CurrentProject.InProgress.Remove(task);
+            }
+        }
+
+        bool CheckBugInTask(ITask task)
+        {
+            if (task.GetType() == typeof(Feture))
+            {
+                Feture temp = (Feture)task;
+                if (temp.RefBug != null)
+                {
+                    return true;
                 }
             }
+            return false;
+        }
+
+        bool CheckBugInTechnicalDebt(ITask task)
+        {
+            if (task.GetType() == typeof(TechnicalDebt))
+            {
+                TechnicalDebt temp = (TechnicalDebt)task;
+                if (temp.RefBug != null)
+                {
+                    return true;
+                }
+            }
+            return false;
         }
     }
 }

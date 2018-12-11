@@ -10,17 +10,23 @@ namespace TaskTreking
     {
         public static void WriteInfoProject (Project project, int day)
         {
+            Console.WriteLine("Name project: " + project.Name);
+            Console.WriteLine();
             Console.WriteLine("Out progress tasks: " + project.AllTasksInStart.Count);
             Console.WriteLine("To Do tasks: " + project.ToDoTasks.Count);
             Console.WriteLine("In progress tasks: " + project.InProgress.Count);
             Console.WriteLine();
+            Console.WriteLine("Day iteration: " + project.DayIteration);
+            Console.WriteLine();
             Console.WriteLine("Tasks Status");
-            for (int i = 0; i < project.ToDoTasks.Count; i++)
+            for (int i = 0; i < project.InProgress.Count; i++)
             {
-                Console.WriteLine(project.ToDoTasks[i].Description + "deys left: " + project.ToDoTasks[i].Duration);
+                Console.WriteLine(project.InProgress[i].Description + " deys left: " + project.InProgress[i].Duration);
             }
             Console.WriteLine();
             Console.WriteLine("Done tasks: " + project.Done.Count);
+            Console.WriteLine();
+            Console.WriteLine("Count bugs: " + project.Bugs);
 
             Console.WriteLine("Fulfillment day: " + day);
         }
